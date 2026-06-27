@@ -17,14 +17,30 @@ def home():
 def predict():
 
     target = float(request.form["target"])
-    total_balls = float(request.form["total_balls"])
     curr_run = float(request.form["curr_run"])
+    total_balls = float(request.form["total_balls"])
     curr_wicket = float(request.form["curr_wicket"])
-    balls_left = float(request.form["balls_left"])
-    req_runs = float(request.form["req_runs"])
-    wick_left = float(request.form["wick_left"])
-    curr_rr = float(request.form["curr_rr"])
-    req_rr = float(request.form["req_rr"])
+
+
+    # Calculations
+    balls_left = 300 - total_balls
+
+    req_runs = target - curr_run
+
+    wick_left = 10 - curr_wicket
+
+
+    if total_balls > 0:
+        curr_rr = curr_run / (total_balls / 6)
+    else:
+        curr_rr = 0
+
+
+    if balls_left > 0:
+        req_rr = req_runs / (balls_left / 6)
+    else:
+        req_rr = 0
+
 
 
     features = np.array([[
@@ -45,10 +61,12 @@ def predict():
     probability = model.predict_proba(features)[0][1] * 100
 
 
+
     if prediction == 1:
         result = "🏆 Chasing Team Will Win"
     else:
         result = "❌ Chasing Team Will Lose"
+
 
 
     return render_template(
@@ -58,6 +76,6 @@ def predict():
     )
 
 
-# Render uses this
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
