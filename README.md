@@ -32,20 +32,20 @@
 # Challenges
 - feature engeneering
 - deployment
-
 ## Screenshots
 
-<p align="center">
-  <img src="Screenshot_20260627-141533.png" width="45%"/>
-  <img src="Screenshot_20260627-141518.png" width="45%"/>
-</p>
+### Home Page
+<img src="Screenshot_20260627-141533.png" width="800"/>
 
-<p align="center">
-  <img src="Screenshot_20260627-141456.png" width="45%"/>
-  <img src="Screenshot_20260627-141527.png" width="45%"/>
-</p>
+### Prediction Page
+<img src="Screenshot_20260627-141518.png" width="800"/>
 
-<p align="center">
-  <img src="Screenshot_20260627-141639.png" width="45%"/>
-</p>
+### Result Page
+<img src="Screenshot_20260627-141456.png" width="800"/>
+
+### Dashboard
+<img src="Screenshot_20260627-141527.png" width="800"/>
+
+### Mobile View
+<img src="Screenshot_20260627-141639.png" width="800"/>
 
