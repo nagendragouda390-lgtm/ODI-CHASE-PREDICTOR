@@ -21,8 +21,7 @@
 
 <p>
 AI powered cricket prediction system.
-Predict the winning probability of a chasing team
-using Machine Learning.
+Predict winning probability using Machine Learning.
 </p>
 
 
@@ -30,23 +29,16 @@ using Machine Learning.
 <form action="/predict" method="post">
 
 
-<input name="target" placeholder="Target Runs">
+<input type="number" name="target" placeholder="Target Runs" required>
 
-<input name="total_balls" placeholder="Balls Completed">
 
-<input name="curr_run" placeholder="Current Runs">
+<input type="number" name="total_balls" placeholder="Balls Completed" required>
 
-<input name="curr_wicket" placeholder="Wickets Fallen">
 
-<input name="balls_left" placeholder="Balls Left">
+<input type="number" name="curr_run" placeholder="Current Runs" required>
 
-<input name="req_runs" placeholder="Required Runs">
 
-<input name="wick_left" placeholder="Wickets Left">
-
-<input name="curr_rr" placeholder="Current Run Rate">
-
-<input name="req_rr" placeholder="Required Run Rate">
+<input type="number" name="curr_wicket" placeholder="Wickets Fallen" required>
 
 
 
@@ -63,4 +55,4 @@ Predict Winner 🚀
 
 </body>
 
-  </html>
+</html>
