@@ -33,3 +33,19 @@
 - feature engeneering
 - deployment
 
+## Screenshots
+
+<p align="center">
+  <img src="Screenshot_20260627-141533.png" width="45%"/>
+  <img src="Screenshot_20260627-141518.png" width="45%"/>
+</p>
+
+<p align="center">
+  <img src="Screenshot_20260627-141456.png" width="45%"/>
+  <img src="Screenshot_20260627-141527.png" width="45%"/>
+</p>
+
+<p align="center">
+  <img src="Screenshot_20260627-141639.png" width="45%"/>
+</p>
+
