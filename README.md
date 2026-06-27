@@ -1,3 +1,3 @@
 # ODI-CHASE-PREDICTOR
 # WEBSITE:
-[chase predictor website] (https://odi-chase-predictor.onrender.com/)
+[chase predictor website](https://odi-chase-predictor.onrender.com/)
