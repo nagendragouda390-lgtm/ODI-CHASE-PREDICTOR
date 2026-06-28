@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ODI Chase Predictor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  <div class="floodlight-wrap">
+
+    <header class="hero">
+      <p class="eyebrow">Live Win-Probability Model</p>
+      <h1>Will The Chase<br>Get There?</h1>
+      <p class="subtitle">
+        Enter the state of play and a Random Forest model — trained on the
+        equations every ODI run chase boils down to — turns the score,
+        the overs left and the wickets in hand into one number: how likely
+        the chasing side is to get over the line.
+      </p>
+    </header>
+
+    <section class="how-it-works" aria-label="How it works">
+      <ol>
+        <li>
+          <span class="step-num">01</span>
+          <div>
+            <h3 class="step-title">Enter the situation</h3>
+            <p class="step-text">Target, current score, balls bowled, wickets down.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">02</span>
+          <div>
+            <h3 class="step-title">The model does the maths</h3>
+            <p class="step-text">Current run rate, required run rate, and the balls and wickets left all feed into the prediction.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">03</span>
+          <div>
+            <h3 class="step-title">Get the verdict</h3>
+            <p class="step-text">A win-or-lose call for the chasing side, with the probability behind it.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="panel form-panel">
+      <p class="panel-title">Match Situation</p>
+
+      <form action="/predict" method="post">
+
+        <div class="field">
+          <label for="target">Target</label>
+          <input type="number" id="target" name="target" placeholder="e.g. 287" required min="1" step="1">
+          <p class="hint">Runs the chasing side needs to win.</p>
+        </div>
+
+        <div class="field">
+          <label for="total_balls">Balls Bowled</label>
+          <input type="number" id="total_balls" name="total_balls" placeholder="e.g. 180" required min="0" max="300" step="1">
+          <p class="hint">Balls completed by the chasing side so far (max 300 in a 50-over innings).</p>
+        </div>
+
+        <div class="field">
+          <label for="curr_run">Current Score</label>
+          <input type="number" id="curr_run" name="curr_run" placeholder="e.g. 142" required min="0" step="1">
+          <p class="hint">Runs scored so far by the chasing side.</p>
+        </div>
+
+        <div class="field">
+          <label for="curr_wicket">Wickets Down</label>
+          <input type="number" id="curr_wicket" name="curr_wicket" placeholder="e.g. 3" required min="0" max="10" step="1">
+          <p class="hint">Wickets lost so far, from 0 to 10.</p>
+        </div>
+
+        <button type="submit" class="cta-button">Predict Win Probability</button>
+      </form>
+    </section>
+
+    <footer class="footnote">
+      <p>
+        Built on historical ODI chase data. This is a statistical read of the
+        situation, not a guarantee — that's why we still watch to the last ball.
+      </p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
